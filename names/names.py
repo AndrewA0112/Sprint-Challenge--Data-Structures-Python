@@ -13,7 +13,7 @@ f.close()
 duplicates = []
 # Run time is still above 1 sec (1.44s) could use work
 for names_2 in names_2:
-    if names_2 in names_1:
+    if names_2 in names_1: # Still two loops, but not as bad time complexity
         duplicates.append(names_2)
 
 # Method used in stretch below (Uses a set, which was restricted), results in a runtime > 0.01s
@@ -37,5 +37,5 @@ cache = {}
 for names_1 in names_1:
     cache[names_1] = names_1
 for names_2 in names_2:
-    if names_2 in cache:
+    if names_2 in cache: # Pythons built in set allows better time complexity
         duplicates.append(names_2)
